@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title data-translate="siteTitle">Restaurant Website</title>
+
+  <!-- Meta Description for SEO -->
+  <meta name="description"
+    content="Resto - A modern and stylish restaurant website offering a delightful dining experience with a variety of dishes." />
+
+  <!-- Meta Keywords for SEO -->
+  <meta name="keywords" content="Restaurant, Food, Dining, Cuisine, Modern Restaurant, Fine Dining" />
+
+  <!-- Author Meta -->
+  <meta name="author" content="Mohamed El-Sayed El-Shamy" />
+
+  <!-- Open Graph Meta for Social Media Sharing -->
+  <meta property="og:title" content="Resto - Modern Restaurant" />
+  <meta property="og:description"
+    content="Discover a delightful dining experience at Resto with a variety of dishes and a stylish ambiance." />
+  <meta property="og:image" content="/img/about-contact/about-1.jpg" />
+  <meta property="og:url" content="https://www.restosite.com" />
+  <meta property="og:type" content="website" />
+
+  <!-- Twitter Card Meta -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Resto - Modern Restaurant" />
+  <meta name="twitter:description"
+    content="Enjoy a variety of delicious dishes at Resto, your destination for fine dining." />
+  <meta name="twitter:image" content="/img/about-contact/about-1.jpg" />
+
+  <!-- Preload critical assets -->
+  <link rel="preload" as="style" href="./css/style.css">
+  <link rel="preload" as="style" href="./css/MediaQueiry.css">
+
+  <!-- Load only required Font Awesome icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <!-- Load only required Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Load AOS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="stylesheet" href="./css/MediaQueiry.css" />
+
+  <!-- Preconnect to Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Load only required font weights -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Playball&family=Montserrat:wght@400;500;600&family=Playfair+Display:wght@400;500;600&family=Roboto:wght@400;500;700&family=Cairo:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+</head>
+
+
+<body>
+  <!-- Top Header -->
+  <div class="top-header">
+    <div class="container">
+      <div class="top-header-content">
+        <div class="hotline">
+          <i class="fas fa-phone"></i>
+          <span data-translate="hotline">Hotline: +1 234 567 890</span>
+        </div>
+        <div class="top-header-right">
+          <a href="#order" class="quick-order-btn" data-translate="orderNow">
+            <i class="fas fa-utensils"></i>
+            <span data-translate="order">Order Now</span>
+          </a>
+          <button class="theme-toggle" aria-label="Toggle Dark Mode">
+            <i class="fas fa-moon"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Header -->
+  <header class="main-header">
+    <div class="headers">
+      <div class="logo">
+        <span><i class="fa fa-utensils text-primary me-2"></i><a href="#">Resto</a></span>
+      </div>
+      <nav class="list-nav">
+        <a href="#Home" class="nav-link active" data-translate="home">Home</a>
+        <a href="#About" class="nav-link" data-translate="about">About</a>
+        <a href="#Menu" class="nav-link" data-translate="menu">Menu</a>
+        <a href="#Services" class="nav-link" data-translate="services">Services</a>
+        <a href="#contact" class="nav-link" data-translate="contact">Contact</a>
+        <a href="#OrderOnline" class="nav-link" data-translate="orderOnline">Order Online</a>
+      </nav>
+      <div class="mobile-menu-btn">
+        <i class="fas fa-bars"></i>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="Home">
+    <div class="container">
+      <div class="hero-content" data-aos="fade-up">
+        <h1 class="hero-title" data-translate="heroTitle">Welcome to Resto</h1>
+        <p class="hero-subtitle" data-translate="heroSubtitle">Experience the finest dining in town</p>
+        <div class="hero-buttons">
+          <a href="#Menu" class="btn btn-primary btn-lg" data-translate="viewMenu">View Menu</a>
+          <a href="#Contact" class="btn btn-outline-primary btn-lg" data-translate="bookTable">Book a Table</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- offer -->
+  <div class="offers container">
+    <!-- offer-1 (Burger) -->
+    <div class="offer" data-aos="fade-left" data-aos-easing="ease-in-out" data-aos-delay="500" data-aos-offset="0">
+      <div class="imge"><img src="/img/offer/offer-burger.webp"></div>
+      <div class="desc">
+        <h3>Classic Burger</h3>
+        <span class="price">20% <span class="off">Off</span></span>
+        <span class="order-btn">Order Now <i class="fa-solid fa-pizza-slice"></i></span>
+      </div>
+    </div>
+    <!-- offer-2 (Pizza) -->
+    <div class="offer" data-aos="fade-right" data-aos-easing="ease-in-out" data-aos-delay="700" data-aos-offset="0">
+      <div class="imge"><img src="/img/offer/offer-pizza.webp"></div>
+      <div class="desc">
+        <h3>Margherita Pizza</h3>
+        <span class="price">20% <span class="off">Off</span></span>
+        <span class="order-btn">Order Now <i class="fa-solid fa-pizza-slice"></i></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Products Section -->
+  <section class="products" id="Menu">
+    <div class="container">
+      <h1 class="products-main-title text-center mb-4" data-translate="ourProductsTitle">Our Products</h1>
+      <div class="section-header text-center" data-aos="fade-up">
+        <h2 class="section-title" data-translate="ourProducts">Our Products</h2>
+        <p class="section-subtitle" data-translate="productsSubtitle">Discover our delicious menu items</p>
+      </div>
+      <div class="row g-4">
+        <!-- Product 1 -->
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+          <div class="product-card">
+            <div class="product-img">
+              <img src="./img/Product/Menu-2.webp" alt="Product 1">
+            </div>
+            <div class="product-content">
+              <h3>Classic Burger</h3>
+              <p>Juicy beef patty with fresh vegetables</p>
+              <div class="product-footer">
+                <span class="price">$12.99</span>
+                <button class="btn btn-primary" data-translate="orderNow">Order Now</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Product 2 -->
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+          <div class="product-card">
+            <div class="product-img">
+              <img src="./img/Product/marghuerita-6e61fd5.jpg" alt="Product 2">
+            </div>
+            <div class="product-content">
+              <h3>Margherita Pizza</h3>
+              <p>Fresh tomatoes, mozzarella, and basil</p>
+              <div class="product-footer">
+                <span class="price">$14.99</span>
+                <button class="btn btn-primary" data-translate="orderNow">Order Now</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Product 3 -->
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+          <div class="product-card">
+            <div class="product-img">
+              <img src="./img/Product/Caesar-Salad-Recipe-3-768x1152.jpg" alt="Product 3">
+            </div>
+            <div class="product-content">
+              <h3>Caesar Salad</h3>
+              <p>Fresh romaine lettuce with Caesar dressing</p>
+              <div class="product-footer">
+                <span class="price">$9.99</span>
+                <button class="btn btn-primary" data-translate="orderNow">Order Now</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- New Product 1 -->
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+          <div class="product-card">
+            <div class="product-img">
+              <img src="./img/Product/Simply-Recipes-Pasta.webp" alt="Special Pasta">
+            </div>
+            <div class="product-content">
+              <h3>Special Pasta</h3>
+              <p>Homemade pasta with fresh seafood and basil</p>
+              <div class="product-footer">
+                <span class="price">$16.99</span>
+                <button class="btn btn-primary" data-translate="orderNow">Order Now</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- New Product 2 -->
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
+          <div class="product-card">
+            <div class="product-img">
+              <img src="./img/Product/Grilled-Salmon-foodiecrush.com-023-1024x1536.jpg" alt="Grilled Salmon">
+            </div>
+            <div class="product-content">
+              <h3>Grilled Salmon</h3>
+              <p>Fresh Atlantic salmon with seasonal vegetables</p>
+              <div class="product-footer">
+                <span class="price">$24.99</span>
+                <button class="btn btn-primary" data-translate="orderNow">Order Now</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- New Product 3 -->
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
+          <div class="product-card">
+            <div class="product-img">
+              <img src="./img/Product/images.webp" alt="Chocolate Lava Cake">
+            </div>
+            <div class="product-content">
+              <h3>Chocolate Lava Cake</h3>
+              <p>Warm chocolate cake with vanilla ice cream</p>
+              <div class="product-footer">
+                <span class="price">$8.99</span>
+                <button class="btn btn-primary" data-translate="orderNow">Order Now</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Order Online Section -->
+  <section class="order-online" id="OrderOnline">
+    <div class="container">
+      <div class="section-header text-center" data-aos="fade-up">
+        <h2 class="section-title" data-translate="orderOnline">Order Online</h2>
+        <p class="section-subtitle" data-translate="orderOnlineSubtitle">Get your favorite food delivered to your
+          doorstep</p>
+      </div>
+      <div class="order-form-container" data-aos="fade-up">
+        <form id="orderForm" class="order-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name" data-translate="fullName">Full Name</label>
+              <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+              <label for="phone" data-translate="phone">Phone Number</label>
+              <input type="tel" id="phone" name="phone" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="address" data-translate="address">Delivery Address</label>
+              <input type="text" id="address" name="address" required>
+            </div>
+            <div class="form-group">
+              <label for="time" data-translate="preferredTime">Preferred Time</label>
+              <input type="time" id="time" name="time" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="items" data-translate="selectItems">Select Items</label>
+            <select id="items" name="items" multiple required>
+              <option value="burger">Classic Burger</option>
+              <option value="pizza">Margherita Pizza</option>
+              <option value="salad">Caesar Salad</option>
+              <option value="pasta">Special Pasta</option>
+              <option value="salmon">Grilled Salmon</option>
+              <option value="dessert">Chocolate Lava Cake</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="notes" data-translate="specialNotes">Special Notes</label>
+            <textarea id="notes" name="notes" rows="3"></textarea>
+          </div>
+          <button type="submit" class="submit-order-btn" data-translate="placeOrder">Place Order</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="services" id="Services">
+    <div class="container">
+      <div class="section-header text-center" data-aos="fade-up">
+        <h2 class="section-title" data-translate="ourServices">Our Services</h2>
+        <p class="section-subtitle" data-translate="servicesSubtitle">Discover what we offer</p>
+      </div>
+      <div class="row g-4">
+        <!-- Service 1 -->
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-utensils"></i>
+            </div>
+            <h3 class="service-title" data-translate="dineIn">Dine In</h3>
+            <p class="service-description" data-translate="dineInDesc">Experience our elegant dining atmosphere with
+              professional service.</p>
+          </div>
+        </div>
+        <!-- Service 2 -->
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-motorcycle"></i>
+            </div>
+            <h3 class="service-title" data-translate="delivery">Delivery</h3>
+            <p class="service-description" data-translate="deliveryDesc">Fast and reliable food delivery to your
+              doorstep.</p>
+          </div>
+        </div>
+        <!-- Service 3 -->
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-calendar-alt"></i>
+            </div>
+            <h3 class="service-title" data-translate="catering">Catering</h3>
+            <p class="service-description" data-translate="cateringDesc">Professional catering services for your special
+              events.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Section -->
+  <section class="team" id="Team">
+    <div class="container">
+      <div class="section-header text-center" data-aos="fade-up">
+        <h2 class="section-title" data-translate="ourTeam">Our Team</h2>
+        <p class="section-subtitle" data-translate="teamSubtitle">Meet our talented chefs</p>
+      </div>
+      <div class="row g-4">
+        <!-- Team Member 1 -->
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+          <div class="team-card">
+            <div class="team-img">
+              <img src="./img/Team/undraw_chef_d0ht.svg" alt="Executive Chef">
+            </div>
+            <div class="team-content">
+              <h3 class="team-name">John Smith</h3>
+              <p class="team-position">Executive Chef</p>
+              <div class="team-social">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Team Member 2 -->
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+          <div class="team-card">
+            <div class="team-img">
+              <img src="./img/Team/undraw_chef_d0ht.svg" alt="Sous Chef">
+            </div>
+            <div class="team-content">
+              <h3 class="team-name">Sarah Johnson</h3>
+              <p class="team-position">Sous Chef</p>
+              <div class="team-social">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Team Member 3 -->
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+          <div class="team-card">
+            <div class="team-img">
+              <img src="./img/Team/undraw_chef_d0ht.svg" alt="Pastry Chef">
+            </div>
+            <div class="team-content">
+              <h3 class="team-name">Michael Brown</h3>
+              <p class="team-position">Pastry Chef</p>
+              <div class="team-social">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Start -->
+  <section class="about" id="About">
+    <div class="container-xxl py-5">
+      <div class="container">
+        <div class="row g-5 align-items-center">
+          <div class="col-lg-6">
+            <div class="row g-3">
+              <div class="bord col-6 text-start">
+                <img class="img-fluid rounded w-100" src="./img/about-contact/about-1.webp">
+              </div>
+              <div class="bord col-6 text-start">
+                <img class="img-fluid rounded w-75 " src="./img/about-contact/about-2.webp" style="margin-top: 25%;">
+              </div>
+              <div class="bord col-6 text-end">
+                <img class="img-fluid rounded w-75" src="./img/about-contact/about-3.webp">
+              </div>
+              <div class="bord col-6 text-end">
+                <img class="img-fluid rounded w-100" src="./img/about-contact/about-4.webp">
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <h5 class="section-title ff-secondary text-start text-primary fw-normal" data-translate="aboutTitle">About
+              Us</h5>
+            <h1 class="mb-4"><span data-translate="aboutSubtitle">Welcome to</span> <i
+                class="fa fa-utensils text-primary me-2"></i>Resto</h1>
+            <p class="mb-4" data-translate="aboutDesc1">Since 2009, Resto has been serving the finest culinary
+              experiences in the heart of the city. Our passion for exceptional food and warm hospitality has made us a
+              beloved destination for food enthusiasts.</p>
+            <p class="mb-4" data-translate="aboutDesc2">Our master chefs combine traditional recipes with modern
+              culinary techniques, using only the freshest local ingredients to create unforgettable dishes that delight
+              your senses.</p>
+            <div class="row g-4 mb-4">
+              <div class="col-sm-6">
+                <div class="d-flex align-items-center border-start border-5 border-primary px-3">
+                  <h1 class="flex-shrink-0 display-5 text-primary mb-0" data-toggle="counter-up">15</h1>
+                  <div class="ps-4">
+                    <p class="mb-0" data-translate="yearsOfExcellence">Years of Excellence</p>
+                    <h6 class="text-uppercase mb-0" data-translate="excellence">Excellence</h6>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="d-flex align-items-center border-start border-5 border-primary px-3">
+                  <h1 class="flex-shrink-0 display-5 text-primary mb-0" data-toggle="counter-up">50</h1>
+                  <div class="ps-4">
+                    <p class="mb-0" data-translate="signature">Signature</p>
+                    <h6 class="text-uppercase mb-0" data-translate="dishes">Dishes</h6>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <a class="btn btn-primary py-3 px-5 mt-2" href="" data-translate="readMore">Read More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- About End -->
+  <!-- contact -->
+  <section id="contact">
+    <div class="container">
+      <div class="contact-header">
+        <h2 data-translate="makeReservation">Make a Reservation</h2>
+        <p data-translate="bookTable">Book your table for an unforgettable dining experience</p>
+      </div>
+      <div class="contact">
+        <div class="contact-img">
+          <img src="/img/about-contact/contact.webp" alt="Restaurant Interior">
+        </div>
+        <form id="reservationForm" method="post" class="booking">
+          <div class="name-number">
+            <input class="input" type="text" placeholder="First Name" data-translate-placeholder="firstName" required>
+            <input class="input" type="text" placeholder="Last Name" data-translate-placeholder="lastName" required>
+          </div>
+          <div class="mail-person">
+            <input class="input" type="email" placeholder="Email Address" data-translate-placeholder="email" required>
+            <input class="input" type="tel" placeholder="Phone Number" data-translate-placeholder="phone" required>
+          </div>
+          <div class="calender-time">
+            <input class="input" type="date" required>
+            <input class="input" type="time" required>
+          </div>
+          <select id="guests" aria-label="Number of Guests" required>
+            <option value="" disabled selected data-translate="guests">Number of Guests</option>
+            <option value="1">1 Person</option>
+            <option value="2">2 People</option>
+            <option value="3">3 People</option>
+            <option value="4">4 People</option>
+            <option value="5">5 People</option>
+            <option value="6">6+ People</option>
+          </select>
+          <textarea class="input" placeholder="Special Requests (Optional)"
+            data-translate-placeholder="specialRequests"></textarea>
+          <button type="submit" class="submit" data-translate="confirmReservation">Confirm Reservation</button>
+        </form>
+      </div>
+    </div>
+  </section>
+  <!-- footer -->
+  <footer id="footer">
+    <div class="container">
+      <div class="footer">
+        <div class="section section-1">
+          <h3 data-translate="contactUs">Contact Us</h3>
+          <li><i class="fa-solid fa-location-dot"></i> <span data-translate="address">123 Gourmet Street, Foodie
+              District</span></li>
+          <li><i class="fa-solid fa-phone"></i> +1 (555) 123-4567</li>
+          <li><i class="fa-solid fa-envelope"></i> reservations@resto.com</li>
+        </div>
+        <div class="section section-2">
+          <h3>Resto</h3>
+          <p>Experience culinary excellence at Resto, where every dish tells a story. Our commitment to quality
+            ingredients and exceptional service creates memorable dining experiences for our valued guests.</p>
+          <ul class="social">
+            <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+            <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
+            <li><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
+            <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+          </ul>
+        </div>
+        <div class="section section-3">
+          <h3 data-translate="openingHours">Opening Hours</h3>
+          <h5 data-translate="mondayFriday">Monday - Friday</h5>
+          <span>11:00 AM - 11:00 PM</span>
+          <h5 data-translate="saturdaySunday">Saturday - Sunday</h5>
+          <span>10:00 AM - 12:00 AM</span>
+        </div>
+      </div>
+      <div class="copy">
+        <p>© 2024 Resto. <span data-translate="rightsReserved">All Rights Reserved.</span></p>
+        <p data-translate="designedBy">Designed with <i class="fa-solid fa-heart text-primary"></i> by Our Team</p>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Load JavaScript files -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+  <script src="./js/aos.js" defer></script>
+  <!-- <script src="./js/translations.js" defer></script> -->
+  <!-- <script src="./js/language.js" defer></script> -->
+  <script type="module" src="./js/script.js"></script>
+</body>
+
+</html>
