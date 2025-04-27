@@ -2074,14 +2074,3 @@ h6,
     font-weight: 700;
     letter-spacing: 0.5px;
 }
-
-/* أزل أو عطل كل قواعد [dir='rtl'] أو .rtl أو خطوط Cairo */
-[dir='rtl'],
-[dir='rtl'] *,
-body.rtl,
-body[dir='rtl'],
-body[lang='ar'],
-[lang='ar'],
-[lang='ar'] * {
-    all: unset !important;
-}

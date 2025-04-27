@@ -1,9 +1,5 @@
 /** @format */
 
-import translations from './translations.js';
-
-let currentLanguage = 'en';
-
 // Language Switcher
 function switchLanguage(lang) {
     currentLanguage = lang;
@@ -26,19 +22,54 @@ function switchLanguage(lang) {
 }
 
 // Theme Toggle
-function toggleTheme() {
-    const html = document.documentElement;
-    const isDark = html.getAttribute('data-theme') === 'dark';
-    if (isDark) {
-        html.removeAttribute('data-theme');
-        localStorage.setItem('darkTheme', 'false');
-        document.querySelector('.theme-toggle').innerHTML = '<i class="fas fa-moon"></i>';
-    } else {
-        html.setAttribute('data-theme', 'dark');
-        localStorage.setItem('darkTheme', 'true');
-        document.querySelector('.theme-toggle').innerHTML = '<i class="fas fa-sun"></i>';
+document.addEventListener('DOMContentLoaded', function () {
+    const themeToggleBtn = document.querySelector('.theme-toggle');
+
+    function setThemeIcon(isDark) {
+        if (themeToggleBtn) {
+            themeToggleBtn.innerHTML = isDark
+                ? '<i class="fas fa-sun"></i>'
+                : '<i class="fas fa-moon"></i>';
+        }
     }
-}
+
+    function applyThemeFromStorage() {
+        let isDark = false;
+        if (typeof localStorage !== 'undefined') {
+            isDark = localStorage.getItem('darkTheme') === 'true';
+        }
+
+        if (isDark) {
+            document.documentElement.setAttribute('data-theme', 'dark');
+        } else {
+            document.documentElement.removeAttribute('data-theme');
+        }
+        setThemeIcon(isDark);
+    }
+
+    function toggleTheme() {
+        const isCurrentlyDark = document.documentElement.getAttribute('data-theme') === 'dark';
+
+        if (isCurrentlyDark) {
+            document.documentElement.removeAttribute('data-theme');
+            if (typeof localStorage !== 'undefined') {
+                localStorage.setItem('darkTheme', 'false');
+            }
+        } else {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            if (typeof localStorage !== 'undefined') {
+                localStorage.setItem('darkTheme', 'true');
+            }
+        }
+        setThemeIcon(!isCurrentlyDark);
+    }
+
+    if (themeToggleBtn) {
+        themeToggleBtn.addEventListener('click', toggleTheme);
+    }
+
+    applyThemeFromStorage();
+});
 
 // Initialize everything when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
@@ -55,24 +86,45 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Initialize theme
-    const isDark = localStorage.getItem('darkTheme') === 'true';
-    if (isDark) {
-        document.documentElement.setAttribute('data-theme', 'dark');
-        document.querySelector('.theme-toggle').innerHTML = '<i class="fas fa-sun"></i>';
+    // تفعيل الوضع حسب التخزين
+    applyThemeFromStorage();
+    // تفعيل زر التبديل
+    const btn = document.querySelector('.theme-toggle');
+    if (btn) {
+        btn.addEventListener('click', toggleTheme);
     }
 
-    // Add click handler to theme toggle
-    document.querySelector('.theme-toggle').addEventListener('click', toggleTheme);
-});
+    // Mobile menu
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const nav = document.querySelector('.list-nav');
 
-// Mobile menu
-const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-const nav = document.querySelector('.list-nav');
+    mobileMenuBtn.addEventListener('click', () => {
+        nav.classList.toggle('active');
+        mobileMenuBtn.classList.toggle('active');
+    });
 
-mobileMenuBtn.addEventListener('click', () => {
-    nav.classList.toggle('active');
-    mobileMenuBtn.classList.toggle('active');
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!nav.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+            nav.classList.remove('active');
+            mobileMenuBtn.classList.remove('active');
+        }
+    });
+
+    // Smooth scroll for nav links
+    const navLinks = document.querySelectorAll('.nav-link, .quick-order-btn');
+    navLinks.forEach((link) => {
+        link.addEventListener('click', function (e) {
+            const href = this.getAttribute('href');
+            if (href && href.startsWith('#')) {
+                e.preventDefault();
+                const target = document.querySelector(href);
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            }
+        });
+    });
 });
 
 // Update content based on language
@@ -285,27 +337,4 @@ window.addEventListener('scroll', () => {
     }
 
     lastScroll = currentScroll;
-});
-
-// Close mobile menu when clicking outside
-document.addEventListener('click', (e) => {
-    if (!nav.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
-        nav.classList.remove('active');
-        mobileMenuBtn.classList.remove('active');
-    }
-});
-
-// Smooth scroll for nav links
-const navLinks = document.querySelectorAll('.nav-link, .quick-order-btn');
-navLinks.forEach((link) => {
-    link.addEventListener('click', function (e) {
-        const href = this.getAttribute('href');
-        if (href && href.startsWith('#')) {
-            e.preventDefault();
-            const target = document.querySelector(href);
-            if (target) {
-                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }
-        }
-    });
 });
