@@ -33,7 +33,6 @@
 
   <!-- Preload critical assets -->
   <link rel="preload" as="style" href="./css/style.css">
-  <link rel="preload" as="style" href="./css/MediaQueiry.css">
 
   <!-- Load only required Font Awesome icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
@@ -46,7 +45,6 @@
 
   <!-- Custom CSS -->
   <link rel="stylesheet" href="./css/style.css" />
-  <link rel="stylesheet" href="./css/MediaQueiry.css" />
 
   <!-- Preconnect to Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -84,16 +82,33 @@
   <header class="main-header">
     <div class="headers">
       <div class="logo">
-        <span><i class="fa fa-utensils text-primary me-2"></i><a href="#">Resto</a></span>
+        <span><i class="fa fa-utensils text-primary me-2"></i><a href="#Home">Resto</a></span>
       </div>
       <nav class="list-nav">
         <a href="#Home" class="nav-link active" data-translate="home">Home</a>
         <a href="#Menu" class="nav-link" data-translate="menu">Menu</a>
-        <a href="#OrderOnline" class="nav-link" data-translate="orderOnline">Order Online</a>
-        <a href="#Services" class="nav-link" data-translate="services">Services</a>
         <a href="#About" class="nav-link" data-translate="about">About</a>
+        <a href="#Services" class="nav-link" data-translate="services">Services</a>
+        <a href="#OrderOnline" class="nav-link" data-translate="orderOnline">Order Online</a>
         <a href="#contact" class="nav-link" data-translate="contact">Contact</a>
       </nav>
+      <div class="cart-icon">
+        <i class="fas fa-shopping-cart"></i>
+        <span class="cart-count">0</span>
+        <div class="cart-dropdown">
+          <div class="cart-items">
+            <!-- Cart items will be dynamically added here -->
+          </div>
+          <div class="cart-total">
+            <span>Total:</span>
+            <span>$0.00</span>
+          </div>
+          <div class="cart-actions">
+            <a href="#" class="cart-btn view-cart">View Cart</a>
+            <a href="#" class="cart-btn checkout">Checkout</a>
+          </div>
+        </div>
+      </div>
       <div class="mobile-menu-btn">
         <i class="fas fa-bars"></i>
       </div>
@@ -105,50 +120,42 @@
     <div class="container">
       <div class="hero-content" data-aos="fade-up">
         <h1 class="hero-title" data-translate="heroTitle">Welcome to Resto</h1>
-        <p class="hero-subtitle" data-translate="heroSubtitle">Experience the finest dining in town</p>
+        <p class="hero-subtitle" data-translate="heroSubtitle" style="color: orange !important;">Experience the finest
+          dining in town</p>
         <div class="hero-buttons">
           <a href="#Menu" class="btn btn-primary btn-lg" data-translate="viewMenu">View Menu</a>
-          <a href="#Contact" class="btn btn-outline-primary btn-lg" data-translate="bookTable">Book a Table</a>
+          <a href="#contact" class="btn btn-outline-primary btn-lg" data-translate="bookTable">Book a Table</a>
         </div>
       </div>
     </div>
   </section>
-
-  <!-- offer -->
-  <div class="offers container">
-    <!-- offer-1 (Burger) -->
-    <div class="offer" data-aos="fade-left" data-aos-easing="ease-in-out" data-aos-delay="500" data-aos-offset="0">
-      <div class="imge"><img src="/img/offer/offer-burger.webp"></div>
-      <div class="desc">
-        <h3>Classic Burger</h3>
-        <span class="price">20% <span class="off">Off</span></span>
-        <span class="order-btn">Order Now <i class="fa-solid fa-pizza-slice"></i></span>
-      </div>
-    </div>
-    <!-- offer-2 (Pizza) -->
-    <div class="offer" data-aos="fade-right" data-aos-easing="ease-in-out" data-aos-delay="700" data-aos-offset="0">
-      <div class="imge"><img src="/img/offer/offer-pizza.webp"></div>
-      <div class="desc">
-        <h3>Margherita Pizza</h3>
-        <span class="price">20% <span class="off">Off</span></span>
-        <span class="order-btn">Order Now <i class="fa-solid fa-pizza-slice"></i></span>
-      </div>
-    </div>
-  </div>
 
   <!-- Products Section -->
   <section class="products" id="Menu">
     <div class="container">
       <h1 class="products-main-title text-center mb-4" data-translate="ourProductsTitle">Our Products</h1>
       <div class="section-header text-center" data-aos="fade-up">
-        <p class="section-subtitle" data-translate="productsSubtitle">Discover our delicious menu items</p>
+        <p class="section-subtitle" data-translate="productsSubtitle" style="color: orange !important;">Discover our
+          delicious menu items</p>
       </div>
+
+      <!-- Filter Menu -->
+      <div class="filter">
+        <div class="filters_menu">
+          <li class="active_menu" data-category="all">All</li>
+          <li data-category="burgers">Burgers</li>
+          <li data-category="pizza">Pizza</li>
+          <li data-category="salads">Salads</li>
+          <li data-category="desserts">Desserts</li>
+        </div>
+      </div>
+
       <div class="row g-4">
         <!-- Product 1 -->
-        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-          <div class="product-card">
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100" data-category="burgers">
+          <div class="product-card" data-id="1">
             <div class="product-img">
-              <img src="./img/Product/Menu-2.webp" alt="Product 1">
+              <img src="img/Product/Menu-2.webp" alt="Classic Burger">
             </div>
             <div class="product-content">
               <h3>Classic Burger</h3>
@@ -161,10 +168,10 @@
           </div>
         </div>
         <!-- Product 2 -->
-        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-          <div class="product-card">
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200" data-category="pizza">
+          <div class="product-card" data-id="2">
             <div class="product-img">
-              <img src="./img/Product/marghuerita-6e61fd5.jpg" alt="Product 2">
+              <img src="img/Product/marghuerita-6e61fd5.jpg" alt="Margherita Pizza">
             </div>
             <div class="product-content">
               <h3>Margherita Pizza</h3>
@@ -177,10 +184,10 @@
           </div>
         </div>
         <!-- Product 3 -->
-        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-          <div class="product-card">
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300" data-category="salads">
+          <div class="product-card" data-id="3">
             <div class="product-img">
-              <img src="./img/Product/Caesar-Salad-Recipe-3-768x1152.jpg" alt="Product 3">
+              <img src="img/Product/Caesar-Salad-Recipe-3-768x1152.jpg" alt="Caesar Salad">
             </div>
             <div class="product-content">
               <h3>Caesar Salad</h3>
@@ -192,55 +199,240 @@
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
 
-        <!-- New Product 1 -->
+  <!-- Offers Section -->
+  <section class="offers-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Our Special Offers</h2>
+        <p class="section-subtitle" style="color: orange !important;">Enjoy the best offers and discounts on our
+          delicious meals
+        </p>
+      </div>
+      <div class="offers-grid">
+        <div class="offer-card">
+          <div class="offer-image">
+            <img src="img/offer/Family Meal.avif" alt="Special Offer">
+            <div class="offer-badge">20% OFF</div>
+          </div>
+          <div class="offer-content">
+            <h3>Family Meal</h3>
+            <p>Complete meal for your family with 20% discount on all orders</p>
+            <div class="offer-price">
+              <span class="original-price">$50</span>
+              <span class="discounted-price">$40</span>
+            </div>
+            <button class="btn btn-primary order-now">Order Now</button>
+          </div>
+        </div>
+        <div class="offer-card">
+          <div class="offer-image">
+            <img src="img/offer/Lunch Special.jpg" alt="Special Offer">
+            <div class="offer-badge">15% OFF</div>
+          </div>
+          <div class="offer-content">
+            <h3>Lunch Special</h3>
+            <p>15% discount on lunch meals from 12 PM to 3 PM</p>
+            <div class="offer-price">
+              <span class="original-price">$30</span>
+              <span class="discounted-price">$25.50</span>
+            </div>
+            <button class="btn btn-primary order-now">Order Now</button>
+          </div>
+        </div>
+        <div class="offer-card">
+          <div class="offer-image">
+            <img src="img/offer/Breakfast Deal.jpg" alt="Special Offer">
+            <div class="offer-badge">25% OFF</div>
+          </div>
+          <div class="offer-content">
+            <h3>Breakfast Deal</h3>
+            <p>25% discount on breakfast meals from 7 AM to 11 AM</p>
+            <div class="offer-price">
+              <span class="original-price">$20</span>
+              <span class="discounted-price">$15</span>
+            </div>
+            <button class="btn btn-primary order-now">Order Now</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about-section" id="About">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6" data-aos="fade-right">
+          <div class="about-image">
+            <img src="img/about-contact/About.webp" alt="Restaurant Interior" class="img-fluid rounded shadow">
+            <div class="experience-badge">
+              <span class="years">15+</span>
+              <span class="text">Years of<br>Excellence</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6" data-aos="fade-left">
+          <div class="about-content">
+            <h2 class="section-title">Our Story</h2>
+            <p class="lead" style="color: orange !important;">Welcome to Resto, where culinary excellence meets warm
+              hospitality.</p>
+            <p>Since our establishment, we've been dedicated to creating memorable dining experiences through our
+              carefully crafted dishes and exceptional service. Our chefs combine traditional recipes with modern
+              techniques to bring you the finest flavors.</p>
+
+            <div class="features mt-4">
+              <div class="feature-item">
+                <i class="fas fa-utensils"></i>
+                <h4>Fresh Ingredients</h4>
+                <p>We source only the finest, locally-sourced ingredients for our dishes.</p>
+              </div>
+              <div class="feature-item">
+                <i class="fas fa-award"></i>
+                <h4>Expert Chefs</h4>
+                <p>Our team of experienced chefs brings creativity and passion to every dish.</p>
+              </div>
+              <div class="feature-item">
+                <i class="fas fa-heart"></i>
+                <h4>Passion for Food</h4>
+                <p>We put our heart into every meal we serve to our valued customers.</p>
+              </div>
+            </div>
+
+            <div class="about-stats mt-4">
+              <div class="row">
+                <div class="col-4">
+                  <div class="stat-item">
+                    <h3>5000+</h3>
+                    <p>Happy Customers</p>
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="stat-item">
+                    <h3>100+</h3>
+                    <p>Menu Items</p>
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="stat-item">
+                    <h3>15+</h3>
+                    <p>Years Experience</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="services-section" id="Services">
+    <div class="container">
+      <div class="section-header text-center mb-5" data-aos="fade-up">
+        <h2 class="section-title">Our Services</h2>
+        <p class="section-subtitle" style="color: orange !important;">Discover what we offer to make your dining
+          experience exceptional</p>
+      </div>
+
+      <div class="row g-4">
+        <!-- Service 1 -->
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-utensils"></i>
+            </div>
+            <h3>Fine Dining</h3>
+            <p>Experience our exquisite menu prepared by our expert chefs using the finest ingredients.</p>
+            <ul class="service-features">
+              <li><i class="fas fa-check"></i> Premium Quality Food</li>
+              <li><i class="fas fa-check"></i> Expert Chef Team</li>
+              <li><i class="fas fa-check"></i> Elegant Atmosphere</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Service 2 -->
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-truck"></i>
+            </div>
+            <h3>Fast Delivery</h3>
+            <p>Enjoy our delicious food delivered to your doorstep with our fast and reliable delivery service.</p>
+            <ul class="service-features">
+              <li><i class="fas fa-check"></i> Quick Delivery</li>
+              <li><i class="fas fa-check"></i> Hot & Fresh Food</li>
+              <li><i class="fas fa-check"></i> Real-time Tracking</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Service 3 -->
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-calendar-check"></i>
+            </div>
+            <h3>Event Catering</h3>
+            <p>Make your special occasions memorable with our professional catering services.</p>
+            <ul class="service-features">
+              <li><i class="fas fa-check"></i> Customized Menus</li>
+              <li><i class="fas fa-check"></i> Professional Staff</li>
+              <li><i class="fas fa-check"></i> Full Event Support</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Service 4 -->
         <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
-          <div class="product-card">
-            <div class="product-img">
-              <img src="./img/Product/Simply-Recipes-Pasta.webp" alt="Special Pasta">
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-gift"></i>
             </div>
-            <div class="product-content">
-              <h3>Special Pasta</h3>
-              <p>Homemade pasta with fresh seafood and basil</p>
-              <div class="product-footer">
-                <span class="price">$16.99</span>
-                <button class="btn btn-primary" data-translate="orderNow">Order Now</button>
-              </div>
-            </div>
+            <h3>Special Offers</h3>
+            <p>Take advantage of our exclusive deals and promotions throughout the year.</p>
+            <ul class="service-features">
+              <li><i class="fas fa-check"></i> Weekly Specials</li>
+              <li><i class="fas fa-check"></i> Loyalty Program</li>
+              <li><i class="fas fa-check"></i> Seasonal Discounts</li>
+            </ul>
           </div>
         </div>
 
-        <!-- New Product 2 -->
+        <!-- Service 5 -->
         <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
-          <div class="product-card">
-            <div class="product-img">
-              <img src="./img/Product/Grilled-Salmon-foodiecrush.com-023-1024x1536.jpg" alt="Grilled Salmon">
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-users"></i>
             </div>
-            <div class="product-content">
-              <h3>Grilled Salmon</h3>
-              <p>Fresh Atlantic salmon with seasonal vegetables</p>
-              <div class="product-footer">
-                <span class="price">$24.99</span>
-                <button class="btn btn-primary" data-translate="orderNow">Order Now</button>
-              </div>
-            </div>
+            <h3>Private Events</h3>
+            <p>Host your private gatherings in our elegant and comfortable private dining areas.</p>
+            <ul class="service-features">
+              <li><i class="fas fa-check"></i> Private Rooms</li>
+              <li><i class="fas fa-check"></i> Custom Decorations</li>
+              <li><i class="fas fa-check"></i> Dedicated Service</li>
+            </ul>
           </div>
         </div>
 
-        <!-- New Product 3 -->
+        <!-- Service 6 -->
         <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
-          <div class="product-card">
-            <div class="product-img">
-              <img src="./img/Product/images.webp" alt="Chocolate Lava Cake">
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-wine-glass-alt"></i>
             </div>
-            <div class="product-content">
-              <h3>Chocolate Lava Cake</h3>
-              <p>Warm chocolate cake with vanilla ice cream</p>
-              <div class="product-footer">
-                <span class="price">$8.99</span>
-                <button class="btn btn-primary" data-translate="orderNow">Order Now</button>
-              </div>
-            </div>
+            <h3>Wine & Bar</h3>
+            <p>Enjoy our carefully selected wine collection and signature cocktails at our bar.</p>
+            <ul class="service-features">
+              <li><i class="fas fa-check"></i> Premium Wines</li>
+              <li><i class="fas fa-check"></i> Craft Cocktails</li>
+              <li><i class="fas fa-check"></i> Expert Sommelier</li>
+            </ul>
           </div>
         </div>
       </div>
@@ -250,309 +442,149 @@
   <!-- Order Online Section -->
   <section class="order-online" id="OrderOnline">
     <div class="container">
-      <div class="section-header text-center" data-aos="fade-up">
-        <h2 class="section-title" data-translate="orderOnline">Order Online</h2>
-        <p class="section-subtitle" data-translate="orderOnlineSubtitle">Get your favorite food delivered to your
-          doorstep</p>
-      </div>
       <div class="order-form-container" data-aos="fade-up">
-        <form id="orderForm" class="order-form">
+        <h2 class="text-center mb-4" style="color: orange !important;">Place Your Order</h2>
+        <form class="order-form">
           <div class="form-row">
             <div class="form-group">
-              <label for="name" data-translate="fullName">Full Name</label>
+              <label for="name">Full Name</label>
               <input type="text" id="name" name="name" required>
             </div>
             <div class="form-group">
-              <label for="phone" data-translate="phone">Phone Number</label>
-              <input type="tel" id="phone" name="phone" required>
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required>
             </div>
           </div>
           <div class="form-row">
             <div class="form-group">
-              <label for="address" data-translate="address">Delivery Address</label>
-              <input type="text" id="address" name="address" required>
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" name="phone" required>
             </div>
             <div class="form-group">
-              <label for="time" data-translate="preferredTime">Preferred Time</label>
-              <input type="time" id="time" name="time" required>
+              <label for="delivery-time">Delivery Time</label>
+              <input type="time" id="delivery-time" name="delivery-time" required>
             </div>
           </div>
           <div class="form-group">
-            <label for="items" data-translate="selectItems">Select Items</label>
-            <select id="items" name="items" multiple required>
-              <option value="burger">Classic Burger</option>
-              <option value="pizza">Margherita Pizza</option>
-              <option value="salad">Caesar Salad</option>
-              <option value="pasta">Special Pasta</option>
-              <option value="salmon">Grilled Salmon</option>
-              <option value="dessert">Chocolate Lava Cake</option>
-            </select>
+            <label for="address">Delivery Address</label>
+            <textarea id="address" name="address" rows="3" required></textarea>
           </div>
-          <div class="form-group">
-            <label for="notes" data-translate="specialNotes">Special Notes</label>
-            <textarea id="notes" name="notes" rows="3"></textarea>
-          </div>
-          <button type="submit" class="submit-order-btn" data-translate="placeOrder">Place Order</button>
+          <button type="submit" class="submit-order-btn">Place Order</button>
         </form>
       </div>
     </div>
   </section>
 
-  <!-- Services Section -->
-  <section class="services" id="Services">
+  <!-- Contact Section -->
+  <section id="contact" class="contact-page">
     <div class="container">
-      <div class="section-header text-center" data-aos="fade-up">
-        <h2 class="section-title" data-translate="ourServices">Our Services</h2>
-        <p class="section-subtitle" data-translate="servicesSubtitle">Discover what we offer</p>
-      </div>
-      <div class="row g-4">
-        <!-- Service 1 -->
-        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-          <div class="service-card">
-            <div class="service-icon">
-              <i class="fas fa-utensils"></i>
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="contact-info" data-aos="fade-right">
+            <h2>Contact Information</h2>
+            <div class="info-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <h3>Address</h3>
+              <p>123 Restaurant Street, Food City, FC 12345</p>
             </div>
-            <h3 class="service-title" data-translate="dineIn">Dine In</h3>
-            <p class="service-description" data-translate="dineInDesc">Experience our elegant dining atmosphere with
-              professional service.</p>
+            <div class="info-item">
+              <i class="fas fa-phone"></i>
+              <h3>Phone</h3>
+              <p>+1 234 567 890</p>
+            </div>
+            <div class="info-item">
+              <i class="fas fa-envelope"></i>
+              <h3>Email</h3>
+              <p>info@resto.com</p>
+            </div>
           </div>
         </div>
-        <!-- Service 2 -->
-        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-          <div class="service-card">
-            <div class="service-icon">
-              <i class="fas fa-motorcycle"></i>
-            </div>
-            <h3 class="service-title" data-translate="delivery">Delivery</h3>
-            <p class="service-description" data-translate="deliveryDesc">Fast and reliable food delivery to your
-              doorstep.</p>
-          </div>
-        </div>
-        <!-- Service 3 -->
-        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-          <div class="service-card">
-            <div class="service-icon">
-              <i class="fas fa-calendar-alt"></i>
-            </div>
-            <h3 class="service-title" data-translate="catering">Catering</h3>
-            <p class="service-description" data-translate="cateringDesc">Professional catering services for your special
-              events.</p>
+        <div class="col-lg-6">
+          <div class="contact-form" data-aos="fade-left">
+            <h2>Send us a Message</h2>
+            <form>
+              <div class="form-group">
+                <label for="contact-name">Name</label>
+                <input type="text" id="contact-name" name="name" required>
+              </div>
+              <div class="form-group">
+                <label for="contact-email">Email</label>
+                <input type="email" id="contact-email" name="email" required>
+              </div>
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+              </div>
+              <button type="submit" class="submit-order-btn">Send Message</button>
+            </form>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Team Section -->
-  <section class="team" id="Team">
-    <div class="container">
-      <div class="section-header text-center" data-aos="fade-up">
-        <h2 class="section-title" data-translate="ourTeam">Our Team</h2>
-        <p class="section-subtitle" data-translate="teamSubtitle">Meet our talented chefs</p>
-      </div>
-      <div class="row g-4">
-        <!-- Team Member 1 -->
-        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-          <div class="team-card">
-            <div class="team-img">
-              <img src="./img/Team/undraw_chef_d0ht.svg" alt="Executive Chef">
-            </div>
-            <div class="team-content">
-              <h3 class="team-name">John Smith</h3>
-              <p class="team-position">Executive Chef</p>
-              <div class="team-social">
-                <a href="#"><i class="fab fa-facebook"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-linkedin"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- Team Member 2 -->
-        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-          <div class="team-card">
-            <div class="team-img">
-              <img src="./img/Team/undraw_chef_d0ht.svg" alt="Sous Chef">
-            </div>
-            <div class="team-content">
-              <h3 class="team-name">Sarah Johnson</h3>
-              <p class="team-position">Sous Chef</p>
-              <div class="team-social">
-                <a href="#"><i class="fab fa-facebook"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-linkedin"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- Team Member 3 -->
-        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-          <div class="team-card">
-            <div class="team-img">
-              <img src="./img/Team/undraw_chef_d0ht.svg" alt="Pastry Chef">
-            </div>
-            <div class="team-content">
-              <h3 class="team-name">Michael Brown</h3>
-              <p class="team-position">Pastry Chef</p>
-              <div class="team-social">
-                <a href="#"><i class="fab fa-facebook"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-linkedin"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- About Start -->
-  <section class="about" id="About">
-    <div class="container-xxl py-5">
-      <div class="container">
-        <div class="row g-5 align-items-center">
-          <div class="col-lg-6">
-            <div class="row g-3">
-              <div class="bord col-6 text-start">
-                <img class="img-fluid rounded w-100" src="./img/about-contact/about-1.webp">
-              </div>
-              <div class="bord col-6 text-start">
-                <img class="img-fluid rounded w-75 " src="./img/about-contact/about-2.webp" style="margin-top: 25%;">
-              </div>
-              <div class="bord col-6 text-end">
-                <img class="img-fluid rounded w-75" src="./img/about-contact/about-3.webp">
-              </div>
-              <div class="bord col-6 text-end">
-                <img class="img-fluid rounded w-100" src="./img/about-contact/about-4.webp">
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-6">
-            <h5 class="section-title ff-secondary text-start text-primary fw-normal" data-translate="aboutTitle">About
-              Us</h5>
-            <h1 class="mb-4"><span data-translate="aboutSubtitle">Welcome to</span> <i
-                class="fa fa-utensils text-primary me-2"></i>Resto</h1>
-            <p class="mb-4" data-translate="aboutDesc1">Since 2009, Resto has been serving the finest culinary
-              experiences in the heart of the city. Our passion for exceptional food and warm hospitality has made us a
-              beloved destination for food enthusiasts.</p>
-            <p class="mb-4" data-translate="aboutDesc2">Our master chefs combine traditional recipes with modern
-              culinary techniques, using only the freshest local ingredients to create unforgettable dishes that delight
-              your senses.</p>
-            <div class="row g-4 mb-4">
-              <div class="col-sm-6">
-                <div class="d-flex align-items-center border-start border-5 border-primary px-3">
-                  <h1 class="flex-shrink-0 display-5 text-primary mb-0" data-toggle="counter-up">15</h1>
-                  <div class="ps-4">
-                    <p class="mb-0" data-translate="yearsOfExcellence">Years of Excellence</p>
-                    <h6 class="text-uppercase mb-0" data-translate="excellence">Excellence</h6>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-6">
-                <div class="d-flex align-items-center border-start border-5 border-primary px-3">
-                  <h1 class="flex-shrink-0 display-5 text-primary mb-0" data-toggle="counter-up">50</h1>
-                  <div class="ps-4">
-                    <p class="mb-0" data-translate="signature">Signature</p>
-                    <h6 class="text-uppercase mb-0" data-translate="dishes">Dishes</h6>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <a class="btn btn-primary py-3 px-5 mt-2" href="" data-translate="readMore">Read More</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- About End -->
-  <!-- contact -->
-  <section id="contact">
-    <div class="container">
-      <div class="contact-header">
-        <h2 data-translate="makeReservation">Make a Reservation</h2>
-        <p data-translate="bookTable">Book your table for an unforgettable dining experience</p>
-      </div>
-      <div class="contact">
-        <div class="contact-img">
-          <img src="/img/about-contact/contact.webp" alt="Restaurant Interior">
-        </div>
-        <form id="reservationForm" method="post" class="booking">
-          <div class="name-number">
-            <input class="input" type="text" placeholder="First Name" data-translate-placeholder="firstName" required>
-            <input class="input" type="text" placeholder="Last Name" data-translate-placeholder="lastName" required>
-          </div>
-          <div class="mail-person">
-            <input class="input" type="email" placeholder="Email Address" data-translate-placeholder="email" required>
-            <input class="input" type="tel" placeholder="Phone Number" data-translate-placeholder="phone" required>
-          </div>
-          <div class="calender-time">
-            <input class="input" type="date" required>
-            <input class="input" type="time" required>
-          </div>
-          <select id="guests" aria-label="Number of Guests" required>
-            <option value="" disabled selected data-translate="guests">Number of Guests</option>
-            <option value="1">1 Person</option>
-            <option value="2">2 People</option>
-            <option value="3">3 People</option>
-            <option value="4">4 People</option>
-            <option value="5">5 People</option>
-            <option value="6">6+ People</option>
-          </select>
-          <textarea class="input" placeholder="Special Requests (Optional)"
-            data-translate-placeholder="specialRequests"></textarea>
-          <button type="submit" class="submit" data-translate="confirmReservation">Confirm Reservation</button>
-        </form>
-      </div>
-    </div>
-  </section>
-  <!-- footer -->
-  <footer id="footer">
+  <!-- Footer -->
+  <footer>
     <div class="container">
       <div class="footer">
-        <div class="section section-1">
-          <h3 data-translate="contactUs">Contact Us</h3>
-          <li><i class="fa-solid fa-location-dot"></i> <span data-translate="address">123 Gourmet Street, Foodie
-              District</span></li>
-          <li><i class="fa-solid fa-phone"></i> +1 (555) 123-4567</li>
-          <li><i class="fa-solid fa-envelope"></i> reservations@resto.com</li>
+        <div class="section">
+          <h3>About Us</h3>
+          <p>We are dedicated to providing the best dining experience with our carefully crafted dishes and excellent
+            service.</p>
         </div>
-        <div class="section section-2">
-          <h3>Resto</h3>
-          <p>Experience culinary excellence at Resto, where every dish tells a story. Our commitment to quality
-            ingredients and exceptional service creates memorable dining experiences for our valued guests.</p>
-          <ul class="social">
-            <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
-            <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
-            <li><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
-            <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+        <div class="section">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="#Home">Home</a></li>
+            <li><a href="#Menu">Menu</a></li>
+            <li><a href="#OrderOnline">Order Online</a></li>
+            <li><a href="#About">About</a></li>
+            <li><a href="#contact">Contact</a></li>
           </ul>
         </div>
-        <div class="section section-3">
-          <h3 data-translate="openingHours">Opening Hours</h3>
-          <h5 data-translate="mondayFriday">Monday - Friday</h5>
-          <span>11:00 AM - 11:00 PM</span>
-          <h5 data-translate="saturdaySunday">Saturday - Sunday</h5>
-          <span>10:00 AM - 12:00 AM</span>
+        <div class="  ">
+          <h3>Follow Us</h3>
+          <ul class="social">
+            <li>
+              <a href="https://facebook.com" target="_blank" aria-label="Facebook" rel="noopener">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+            </li>
+            <li>
+              <a href="https://twitter.com" target="_blank" aria-label="Twitter" rel="noopener">
+                <i class="fab fa-twitter"></i>
+              </a>
+            </li>
+            <li>
+              <a href="https://instagram.com" target="_blank" aria-label="Instagram" rel="noopener">
+                <i class="fab fa-instagram"></i>
+              </a>
+            </li>
+            <li>
+              <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn" rel="noopener">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+            </li>
+          </ul>
         </div>
       </div>
       <div class="copy">
-        <p>© 2024 Resto. <span data-translate="rightsReserved">All Rights Reserved.</span></p>
-        <p data-translate="designedBy">Designed with <i class="fa-solid fa-heart text-primary"></i> by Our Team</p>
+        <p>&copy; 2024 Resto. All rights reserved.</p>
       </div>
-
     </div>
   </footer>
 
-  <!-- Load JavaScript files -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
-  <script src="./js/aos.js" defer></script>
-  <!-- <script src="./js/translations.js" defer></script> -->
-  <!-- <script src="./js/language.js" defer></script> -->
-  <script type="module" src="./js/script.js"></script>
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 800,
+      easing: 'ease-in-out',
+      once: true
+    });
+  </script>
+  <script src="./js/main.js"></script>
 </body>
 
 </html>
