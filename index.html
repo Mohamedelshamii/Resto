@@ -138,7 +138,8 @@
               <p>Juicy beef patty with fresh vegetables</p>
               <div class="product-footer">
                 <span class="price" data-price="12.99">$12.99</span>
-                <button class="btn btn-primary add-to-cart-btn">Add to Cart</button>
+                <button class="btn btn-primary add-to-cart-btn" onclick="showToast('Product added to cart!')">Add to
+                  Cart</button>
               </div>
             </div>
           </div>
@@ -154,7 +155,8 @@
               <p>Fresh tomatoes, mozzarella, and basil</p>
               <div class="product-footer">
                 <span class="price" data-price="14.99">$14.99</span>
-                <button class="btn btn-primary add-to-cart-btn">Add to Cart</button>
+                <button class="btn btn-primary add-to-cart-btn" onclick="showToast('Product added to cart!')">Add to
+                  Cart</button>
               </div>
             </div>
           </div>
@@ -170,7 +172,8 @@
               <p>Fresh romaine lettuce with Caesar dressing</p>
               <div class="product-footer">
                 <span class="price" data-price="9.99">$9.99</span>
-                <button class="btn btn-primary add-to-cart-btn">Add to Cart</button>
+                <button class="btn btn-primary add-to-cart-btn" onclick="showToast('Product added to cart!')">Add to
+                  Cart</button>
               </div>
             </div>
           </div>
@@ -201,7 +204,7 @@
               <span class="original-price">$50</span>
               <span class="discounted-price">$40</span>
             </div>
-            <button class="btn btn-primary order-now">Order Now</button>
+            <button class="btn btn-primary order-now" onclick="showToast('Order Now')">Order Now</button>
           </div>
         </div>
         <div class="offer-card">
@@ -216,7 +219,7 @@
               <span class="original-price">$30</span>
               <span class="discounted-price">$25.50</span>
             </div>
-            <button class="btn btn-primary order-now">Order Now</button>
+            <button class="btn btn-primary order-now" onclick="showToast('Order Now')">Order Now</button>
           </div>
         </div>
         <div class="offer-card">
@@ -231,7 +234,7 @@
               <span class="original-price">$20</span>
               <span class="discounted-price">$15</span>
             </div>
-            <button class="btn btn-primary order-now">Order Now</button>
+            <button class="btn btn-primary order-now" onclick="showToast('Order Now')">Order Now</button>
           </div>
         </div>
       </div>
@@ -561,6 +564,17 @@
     });
   </script>
   <script src="./js/main.js"></script>
+  <script src="./js/script.js"></script>
+
+  <!-- Toast Notification -->
+  <div class="toast-container">
+    <div class="toast">
+      <div class="toast-content">
+        <i class="fas fa-check-circle"></i>
+        <span class="toast-message"></span>
+      </div>
+    </div>
+  </div>
 </body>
 
 </html>

@@ -349,6 +349,7 @@ class Cart {
 
         if (existingItem) {
             existingItem.quantity += 1;
+            showToast(`${name} quantity increased to ${existingItem.quantity}`);
         } else {
             this.items.push({
                 id,
@@ -357,18 +358,21 @@ class Cart {
                 image,
                 quantity: 1,
             });
+            showToast(`${name} added to cart`);
         }
 
         this.saveCart();
         this.updateCartUI();
-        showToast('تمت إضافة المنتج إلى السلة');
     }
 
     removeItem(id) {
+        const item = this.items.find((item) => item.id === id);
+        if (item) {
+            showToast(`${item.name} removed from cart`);
+        }
         this.items = this.items.filter((item) => item.id !== id);
         this.saveCart();
         this.updateCartUI();
-        showToast('تم حذف المنتج من السلة');
     }
 
     updateQuantity(id, change) {
@@ -378,6 +382,7 @@ class Cart {
             if (item.quantity <= 0) {
                 this.removeItem(id);
             } else {
+                showToast(`${item.name} quantity updated to ${item.quantity}`);
                 this.saveCart();
                 this.updateCartUI();
             }
