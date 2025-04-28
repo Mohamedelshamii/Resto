@@ -57,64 +57,40 @@
 
 
 <body>
-  <!-- Top Header -->
-  <div class="top-header">
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
     <div class="container">
-      <div class="top-header-content">
-        <div class="hotline">
-          <i class="fas fa-phone"></i>
-          <span data-translate="hotline">Hotline: +1 234 567 890</span>
-        </div>
-        <div class="top-header-right">
-          <a href="#OrderOnline" class="quick-order-btn" data-translate="orderNow">
-            <i class="fas fa-utensils"></i>
-            <span data-translate="order">Order Now</span>
-          </a>
-          <button class="theme-toggle" aria-label="Toggle Dark Mode">
-            <i class="fas fa-moon"></i>
-          </button>
-        </div>
+      <a class="navbar-brand" href="#">
+        Resto <i class="fas fa-utensils"></i>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        title="Toggle Navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" href="#Home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#Menu">Menu</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#About">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#OrderOnline">Order</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#Services">services</a>
+          </li>
+        </ul>
       </div>
     </div>
-  </div>
-
-  <!-- Main Header -->
-  <header class="main-header">
-    <div class="headers">
-      <div class="logo">
-        <span><i class="fa fa-utensils text-primary me-2"></i><a href="#Home">Resto</a></span>
-      </div>
-      <nav class="list-nav">
-        <a href="#Home" class="nav-link active" data-translate="home">Home</a>
-        <a href="#Menu" class="nav-link" data-translate="menu">Menu</a>
-        <a href="#About" class="nav-link" data-translate="about">About</a>
-        <a href="#Services" class="nav-link" data-translate="services">Services</a>
-        <a href="#OrderOnline" class="nav-link" data-translate="orderOnline">Order Online</a>
-        <a href="#contact" class="nav-link" data-translate="contact">Contact</a>
-      </nav>
-      <div class="cart-icon">
-        <i class="fas fa-shopping-cart"></i>
-        <span class="cart-count">0</span>
-        <div class="cart-dropdown">
-          <div class="cart-items">
-            <!-- Cart items will be dynamically added here -->
-          </div>
-          <div class="cart-total">
-            <span>Total:</span>
-            <span>$0.00</span>
-          </div>
-          <div class="cart-actions">
-            <a href="#" class="cart-btn view-cart">View Cart</a>
-            <a href="#" class="cart-btn checkout">Checkout</a>
-          </div>
-        </div>
-      </div>
-      <div class="mobile-menu-btn">
-        <i class="fas fa-bars"></i>
-      </div>
-    </div>
-  </header>
-
+  </nav>
   <!-- Hero Section -->
   <section class="hero" id="Home">
     <div class="container">
@@ -155,14 +131,14 @@
         <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100" data-category="burgers">
           <div class="product-card" data-id="1">
             <div class="product-img">
-              <img src="img/Product/Menu-2.webp" alt="Classic Burger">
+              <img src="img/Product/Menu-2.webp" alt="Classic Burger" class="product-image">
             </div>
             <div class="product-content">
-              <h3>Classic Burger</h3>
+              <h3 class="product-name">Classic Burger</h3>
               <p>Juicy beef patty with fresh vegetables</p>
               <div class="product-footer">
-                <span class="price">$12.99</span>
-                <button class="btn btn-primary" data-translate="orderNow">Order Now</button>
+                <span class="price" data-price="12.99">$12.99</span>
+                <button class="btn btn-primary add-to-cart-btn">Add to Cart</button>
               </div>
             </div>
           </div>
@@ -171,14 +147,14 @@
         <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200" data-category="pizza">
           <div class="product-card" data-id="2">
             <div class="product-img">
-              <img src="img/Product/marghuerita-6e61fd5.jpg" alt="Margherita Pizza">
+              <img src="img/Product/marghuerita-6e61fd5.jpg" alt="Margherita Pizza" class="product-image">
             </div>
             <div class="product-content">
-              <h3>Margherita Pizza</h3>
+              <h3 class="product-name">Margherita Pizza</h3>
               <p>Fresh tomatoes, mozzarella, and basil</p>
               <div class="product-footer">
-                <span class="price">$14.99</span>
-                <button class="btn btn-primary" data-translate="orderNow">Order Now</button>
+                <span class="price" data-price="14.99">$14.99</span>
+                <button class="btn btn-primary add-to-cart-btn">Add to Cart</button>
               </div>
             </div>
           </div>
@@ -187,14 +163,14 @@
         <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300" data-category="salads">
           <div class="product-card" data-id="3">
             <div class="product-img">
-              <img src="img/Product/Caesar-Salad-Recipe-3-768x1152.jpg" alt="Caesar Salad">
+              <img src="img/Product/Caesar-Salad-Recipe-3-768x1152.jpg" alt="Caesar Salad" class="product-image">
             </div>
             <div class="product-content">
-              <h3>Caesar Salad</h3>
+              <h3 class="product-name">Caesar Salad</h3>
               <p>Fresh romaine lettuce with Caesar dressing</p>
               <div class="product-footer">
-                <span class="price">$9.99</span>
-                <button class="btn btn-primary" data-translate="orderNow">Order Now</button>
+                <span class="price" data-price="9.99">$9.99</span>
+                <button class="btn btn-primary add-to-cart-btn">Add to Cart</button>
               </div>
             </div>
           </div>
@@ -542,7 +518,7 @@
             <li><a href="#contact">Contact</a></li>
           </ul>
         </div>
-        <div class="  ">
+        <div class="section-social">
           <h3>Follow Us</h3>
           <ul class="social">
             <li>

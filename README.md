@@ -1,102 +1,81 @@
 <!-- @format -->
 
-# Resto - موقع مطعم متكامل
+# Resto - Modern Restaurant Website
 
-موقع مطعم متكامل مبني باستخدام HTML5 و CSS3 و JavaScript، يقدم واجهة مستخدم حديثة وتجربة مستخدم محسنة مع دعم كامل للوضع الداكن.
+A modern and responsive restaurant website built with HTML, CSS, and JavaScript. The website features a clean design, smooth animations, and a user-friendly interface.
 
-## نظرة عامة
+## 🌟 Features
 
-Resto هو مشروع متكامل يهدف إلى تقديم حلول رقمية للمطاعم، حيث يوفر:
+-   **Responsive Design**: Fully responsive layout that works on all devices
+-   **Modern UI**: Clean and elegant design with smooth animations
+-   **Interactive Menu**: Filterable menu items with categories
+-   **Online Ordering**: Easy-to-use order form for customers
+-   **Services Section**: Showcase of restaurant services and offerings
+-   **Contact Form**: Simple contact form for customer inquiries
+-   **Special Offers**: Display of current promotions and deals
+-   **About Section**: Information about the restaurant's history and values
 
--   واجهة مستخدم سلسة وسهلة الاستخدام
--   تجربة طلب طعام سريعة وفعالة
--   عرض تفاعلي للمنتجات والعروض
--   سلة تسوق ذكية مع تحديثات فورية
+## 🛠️ Technologies Used
 
-## المميزات الرئيسية
+-   HTML5
+-   CSS3
+-   JavaScript
+-   Bootstrap 5
+-   Font Awesome Icons
+-   AOS (Animate On Scroll) Library
 
--   **تصميم متجاوب** يعمل على جميع الأجهزة (هواتف، أجهزة لوحية، حواسيب)
--   **وضع داكن** كامل مع ألوان متناسقة وتجربة مستخدم محسنة
--   **قائمة طعام** تفاعلية مع تصنيفات متعددة وتصفية ذكية
--   **سلة تسوق** ذكية مع تحديثات فورية وحساب تلقائي للمجموع
--   **صفحة اتصال** مع نموذج تواصل متقدم
--   **قسم عروض** خاص مع عرض العروض الترويجية
--   **قسم خدمات** متكامل يوضح خدمات المطعم
--   **قسم من نحن** مع معلومات تفصيلية عن المطعم
+## 📋 Pages
 
-## التقنيات المستخدمة
+1. **Home**: Hero section with call-to-action buttons
+2. **Menu**: Filterable menu items with categories
+3. **About**: Restaurant information and history
+4. **Services**: Available services and offerings
+5. **Order Online**: Online ordering form
+6. **Contact**: Contact information and message form
 
--   **HTML5** للهيكل الأساسي
--   **CSS3** مع متغيرات CSS للتصميم المرن
--   **JavaScript** للوظائف التفاعلية
--   **Font Awesome** للأيقونات والرسومات
--   **Google Fonts** للخطوط الجميلة والواضحة
+## 🚀 Getting Started
 
-## المميزات التفصيلية
+1. Clone the repository:
 
-### الوضع الداكن
+    ```bash
+    git clone https://github.com/yourusername/resto-website.git
+    ```
 
--   تحويل كامل للموقع إلى الوضع الداكن
--   ألوان متناسقة للخطوط والعناصر
--   تحسين التباين للقراءة
--   تأثيرات حركية سلسة
--   حفظ تفضيلات المستخدم
+2. Open the project folder:
 
-### القائمة والتنقل
+    ```bash
+    cd resto-website
+    ```
 
--   قائمة رئيسية متجاوبة
--   قائمة متنقلة للأجهزة المحمولة
--   تأثيرات حركية عند التحويم
--   تنقل سلس بين الصفحات
+3. Open `index.html` in your browser to view the website
 
-### المنتجات والعروض
+## 🎨 Customization
 
--   عرض جذاب للمنتجات
--   تصنيفات متعددة
--   عروض خاصة مع أسعار مخفضة
--   تأثيرات حركية عند التفاعل
+-   Edit `css/style.css` to modify styles
+-   Update `js/main.js` for JavaScript functionality
+-   Modify `index.html` for content changes
 
-### سلة التسوق
+## 📱 Responsive Breakpoints
 
--   تحديث فوري للكميات
--   حساب تلقائي للمجموع
--   إشعارات عند الإضافة
--   إمكانية تعديل الكميات
+-   Mobile: < 576px
+-   Tablet: 576px - 768px
+-   Desktop: > 768px
 
-### النماذج والاتصال
+## 🤝 Contributing
 
--   نماذج تفاعلية
--   تحقق من صحة المدخلات
--   رسائل تأكيد
--   معلومات اتصال متكاملة
+Contributions are welcome! Please feel free to submit a Pull Request.
 
-## طريقة التشغيل
+## 📄 License
 
-1. قم بتحميل جميع ملفات المشروع
-2. افتح ملف `index.html` في متصفحك
-3. يمكنك التبديل بين الوضع الداكن والفاتح من خلال زر القمر/الشمس في أعلى الصفحة
+This project is licensed under the MIT License - see the LICENSE file for details.
 
-## المساهمة
+## 👨‍💻 Author
 
-نرحب بمساهماتكم! يرجى اتباع الخطوات التالية:
+-   **Mohamed El-Sayed El-Shamy**
 
-1. قم بعمل Fork للمشروع
-2. أنشئ فرع جديد (`git checkout -b feature/AmazingFeature`)
-3. قم بعمل Commit للتغييرات (`git commit -m 'Add some AmazingFeature'`)
-4. قم بعمل Push للفرع (`git push origin feature/AmazingFeature`)
-5. قم بفتح طلب Pull Request
+## 📞 Contact
 
-## الترخيص
+For any inquiries, please contact:
 
-هذا المشروع مرخص تحت رخصة MIT - انظر ملف [LICENSE](LICENSE) للتفاصيل.
-
-## الاتصال
-
-لأي استفسارات أو اقتراحات، يرجى التواصل عبر:
-
--   البريد الإلكتروني: [your-email@example.com](mailto:your-email@example.com)
--   GitHub Issues
-
----
-
-تم تطوير هذا المشروع بواسطة [اسمك] - جميع الحقوق محفوظة © 2024
+-   Email: info@resto.com
+-   Phone: +1 234 567 890
