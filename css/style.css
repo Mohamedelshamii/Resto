@@ -80,7 +80,7 @@ body {
 
 .headers {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
     padding: 0 20px;
     position: relative;
@@ -1693,4 +1693,22 @@ a {
     .form-row {
         grid-template-columns: 1fr;
     }
+}
+
+.navbar-collapse {
+    justify-content: flex-end;
+}
+
+.navbar-nav {
+    margin-left: auto;
+}
+
+.navbar-brand {
+    margin-right: 0;
+}
+
+.navbar > .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
