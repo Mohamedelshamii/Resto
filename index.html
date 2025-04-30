@@ -58,18 +58,18 @@
 
 <body>
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
+  <nav class="navbar navbar-expand-lg navbar-light">
     <div class="container">
-      <a class="navbar-brand d-flex align-items-center" href="#">
-        <i class="fas fa-utensils text-primary me-2"></i>
-        <span class="fw-bold">Resto</span>
+      <a class="navbar-brand" href="#">
+        <i class="fas fa-utensils"></i>
+        <span>Resto</span>
       </a>
-      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <ul class="navbar-nav">
           <li class="nav-item">
             <a class="nav-link active" href="#Home">Home</a>
           </li>
@@ -88,10 +88,10 @@
           <li class="nav-item">
             <a class="nav-link" href="#Services">Services</a>
           </li>
+          <li class="nav-item ms-lg-3">
+            <a href="#OrderOnline" class="btn btn-primary">Order Now</a>
+          </li>
         </ul>
-        <div class="ms-3 d-flex align-items-center">
-          <a href="#OrderOnline" class="btn btn-primary rounded-pill px-4">Order Now</a>
-        </div>
       </div>
     </div>
   </nav>
@@ -133,51 +133,54 @@
       <div class="row g-4">
         <!-- Product 1 -->
         <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100" data-category="burgers">
-          <div class="product-card" data-id="1">
+          <div class="product-card">
             <div class="product-img">
-              <img src="img/Product/Menu-2.webp" alt="Classic Burger" class="product-image">
+              <img src="img/Product/Menu-2.webp" alt="Classic Burger" loading="lazy">
             </div>
             <div class="product-content">
-              <h3 class="product-name">Classic Burger</h3>
-              <p>Juicy beef patty with fresh vegetables</p>
+              <h3>Classic Burger</h3>
+              <p>Juicy beef patty with fresh vegetables and our special sauce</p>
               <div class="product-footer">
                 <span class="price" data-price="12.99">$12.99</span>
-                <button class="btn btn-primary add-to-cart-btn" onclick="showToast('Product added to cart!')">Add to
-                  Cart</button>
+                <button class="btn btn-primary add-to-cart-btn" onclick="showToast('Product added to cart!')">
+                  <i class="fas fa-shopping-cart me-2"></i>Add to Cart
+                </button>
               </div>
             </div>
           </div>
         </div>
         <!-- Product 2 -->
         <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200" data-category="pizza">
-          <div class="product-card" data-id="2">
+          <div class="product-card">
             <div class="product-img">
-              <img src="img/Product/marghuerita-6e61fd5.jpg" alt="Margherita Pizza" class="product-image">
+              <img src="img/Product/marghuerita-6e61fd5.jpg" alt="Margherita Pizza" loading="lazy">
             </div>
             <div class="product-content">
-              <h3 class="product-name">Margherita Pizza</h3>
-              <p>Fresh tomatoes, mozzarella, and basil</p>
+              <h3>Margherita Pizza</h3>
+              <p>Fresh tomatoes, mozzarella, and basil on our homemade crust</p>
               <div class="product-footer">
                 <span class="price" data-price="14.99">$14.99</span>
-                <button class="btn btn-primary add-to-cart-btn" onclick="showToast('Product added to cart!')">Add to
-                  Cart</button>
+                <button class="btn btn-primary add-to-cart-btn" onclick="showToast('Product added to cart!')">
+                  <i class="fas fa-shopping-cart me-2"></i>Add to Cart
+                </button>
               </div>
             </div>
           </div>
         </div>
         <!-- Product 3 -->
         <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300" data-category="salads">
-          <div class="product-card" data-id="3">
+          <div class="product-card">
             <div class="product-img">
-              <img src="img/Product/Caesar-Salad-Recipe-3-768x1152.jpg" alt="Caesar Salad" class="product-image">
+              <img src="img/Product/Caesar-Salad-Recipe-3-768x1152.jpg" alt="Caesar Salad" loading="lazy">
             </div>
             <div class="product-content">
-              <h3 class="product-name">Caesar Salad</h3>
-              <p>Fresh romaine lettuce with Caesar dressing</p>
+              <h3>Caesar Salad</h3>
+              <p>Fresh romaine lettuce with our homemade Caesar dressing</p>
               <div class="product-footer">
                 <span class="price" data-price="9.99">$9.99</span>
-                <button class="btn btn-primary add-to-cart-btn" onclick="showToast('Product added to cart!')">Add to
-                  Cart</button>
+                <button class="btn btn-primary add-to-cart-btn" onclick="showToast('Product added to cart!')">
+                  <i class="fas fa-shopping-cart me-2"></i>Add to Cart
+                </button>
               </div>
             </div>
           </div>

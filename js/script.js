@@ -20,28 +20,65 @@ function showToast(message) {
         setTimeout(() => {
             toast.style.display = 'none';
         }, 300);
-    }, 500);
+    }, 2000);
 }
 
-// Navbar Scroll Effect
-window.addEventListener('scroll', function () {
+// Navbar Scroll Effect and Active Link
+document.addEventListener('DOMContentLoaded', function () {
     const navbar = document.querySelector('.navbar');
-    if (window.scrollY > 50) {
-        navbar.classList.add('scrolled');
-    } else {
-        navbar.classList.remove('scrolled');
-    }
+    const navLinks = document.querySelectorAll('.nav-link');
+    const sections = document.querySelectorAll('section');
+
+    // Navbar scroll effect
+    window.addEventListener('scroll', function () {
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+
+        // Update active link based on scroll position
+        let current = '';
+        sections.forEach((section) => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            if (scrollY >= sectionTop - 200) {
+                current = section.getAttribute('id');
+            }
+        });
+
+        navLinks.forEach((link) => {
+            link.classList.remove('active');
+            if (link.getAttribute('href').substring(1) === current) {
+                link.classList.add('active');
+            }
+        });
+    });
+
+    // Close mobile menu when clicking a link
+    const navbarCollapse = document.querySelector('.navbar-collapse');
+    navLinks.forEach((link) => {
+        link.addEventListener('click', () => {
+            if (navbarCollapse.classList.contains('show')) {
+                navbarCollapse.classList.remove('show');
+            }
+        });
+    });
 });
 
-// Smooth scrolling for navigation links
+// Smooth scrolling
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
         if (target) {
-            target.scrollIntoView({
+            const headerOffset = 80;
+            const elementPosition = target.offsetTop;
+            const offsetPosition = elementPosition - headerOffset;
+
+            window.scrollTo({
+                top: offsetPosition,
                 behavior: 'smooth',
-                block: 'start',
             });
         }
     });
