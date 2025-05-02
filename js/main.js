@@ -5,18 +5,6 @@ const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
 const listNav = document.querySelector('.list-nav');
 const navLinks = document.querySelectorAll('.nav-link');
 
-// Cart Elements
-const cartIcon = document.querySelector('.cart-icon');
-const cartDropdown = document.querySelector('.cart-dropdown');
-const closeCartBtn = document.querySelector('.close-cart');
-const themeToggle = document.querySelector('.theme-toggle');
-const cartItemsContainer = document.querySelector('.cart-items');
-const cartTotal = document.querySelector('.cart-total');
-const cartCount = document.querySelector('.cart-count');
-
-// Initialize cart instance
-const cart = new Cart();
-
 // Add animation delay to nav links
 navLinks.forEach((link, index) => {
     link.style.setProperty('--item-index', index);
@@ -250,7 +238,7 @@ forms.forEach((form) => {
             // Remove success message after 3 seconds
             setTimeout(() => {
                 successMessage.remove();
-            }, 3000);
+            }, 2000);
         }
     });
 });
@@ -313,148 +301,6 @@ const tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
     return new bootstrap.Tooltip(tooltipTriggerEl);
 });
 
-// Cart functionality
-class Cart {
-    constructor() {
-        this.items = [];
-        this.cartItemsContainer = document.querySelector('.cart-items');
-        this.cartTotal = document.querySelector('.total-amount');
-        this.cartCount = document.querySelector('.cart-count');
-        this.loadCart();
-        this.setupEventListeners();
-    }
-
-    loadCart() {
-        const savedCart = localStorage.getItem('cart');
-        if (savedCart) {
-            this.items = JSON.parse(savedCart);
-            this.updateCartCount();
-            this.updateCartUI();
-        }
-    }
-
-    saveCart() {
-        localStorage.setItem('cart', JSON.stringify(this.items));
-        this.updateCartCount();
-    }
-
-    updateCartCount() {
-        const totalItems = this.items.reduce((total, item) => total + item.quantity, 0);
-        this.cartCount.textContent = totalItems;
-        this.cartCount.style.display = totalItems > 0 ? 'block' : 'none';
-    }
-
-    addItem(id, name, price, image) {
-        const existingItem = this.items.find((item) => item.id === id);
-
-        if (existingItem) {
-            existingItem.quantity += 1;
-            showToast(`${name} quantity increased to ${existingItem.quantity}`);
-        } else {
-            this.items.push({
-                id,
-                name,
-                price,
-                image,
-                quantity: 1,
-            });
-            showToast(`${name} added to cart`);
-        }
-
-        this.saveCart();
-        this.updateCartUI();
-    }
-
-    removeItem(id) {
-        const item = this.items.find((item) => item.id === id);
-        if (item) {
-            showToast(`${item.name} removed from cart`);
-        }
-        this.items = this.items.filter((item) => item.id !== id);
-        this.saveCart();
-        this.updateCartUI();
-    }
-
-    updateQuantity(id, change) {
-        const item = this.items.find((item) => item.id === id);
-        if (item) {
-            item.quantity += change;
-            if (item.quantity <= 0) {
-                this.removeItem(id);
-            } else {
-                showToast(`${item.name} quantity updated to ${item.quantity}`);
-                this.saveCart();
-                this.updateCartUI();
-            }
-        }
-    }
-
-    updateCartUI() {
-        if (this.items.length === 0) {
-            this.cartItemsContainer.innerHTML = '<p class="empty-cart">السلة فارغة</p>';
-            this.cartTotal.textContent = '$0.00';
-            return;
-        }
-
-        this.cartItemsContainer.innerHTML = this.items
-            .map(
-                (item) => `
-            <div class="cart-item" data-id="${item.id}">
-                <div class="item-image">
-                    <img src="${item.image}" alt="${item.name}">
-                </div>
-                <div class="item-details">
-                    <h4>${item.name}</h4>
-                    <div class="price">$${(item.price * item.quantity).toFixed(2)}</div>
-                    <div class="quantity-controls">
-                        <button class="quantity-btn minus">-</button>
-                        <span class="quantity">${item.quantity}</span>
-                        <button class="quantity-btn plus">+</button>
-                        <button class="remove-item">×</button>
-                    </div>
-                </div>
-            </div>
-        `
-            )
-            .join('');
-
-        const total = this.items.reduce((sum, item) => sum + item.price * item.quantity, 0);
-        this.cartTotal.textContent = `$${total.toFixed(2)}`;
-    }
-
-    setupEventListeners() {
-        // Add to cart buttons
-        document.querySelectorAll('.add-to-cart-btn').forEach((button) => {
-            button.addEventListener('click', (e) => {
-                e.preventDefault();
-                const productCard = button.closest('.product-card');
-                const id = productCard.dataset.id;
-                const name = productCard.querySelector('.product-name').textContent;
-                const price = parseFloat(productCard.querySelector('.price').dataset.price);
-                const image = productCard.querySelector('.product-image').src;
-
-                this.addItem(id, name, price, image);
-                cartDropdown.classList.add('active');
-            });
-        });
-
-        // Cart item controls
-        this.cartItemsContainer.addEventListener('click', (e) => {
-            const cartItem = e.target.closest('.cart-item');
-            if (!cartItem) return;
-
-            const id = cartItem.dataset.id;
-
-            if (e.target.classList.contains('plus')) {
-                this.updateQuantity(id, 1);
-            } else if (e.target.classList.contains('minus')) {
-                this.updateQuantity(id, -1);
-            } else if (e.target.classList.contains('remove-item')) {
-                this.removeItem(id);
-            }
-        });
-    }
-}
 
 // Function to show theme change notification
 function showThemeToast(isDark) {
