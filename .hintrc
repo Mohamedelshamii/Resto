@@ -15,6 +15,13 @@
         "label": "off"
       }
     ],
-    "button-type": "off"
+    "button-type": "off",
+    "axe/structure": [
+      "default",
+      {
+        "listitem": "off"
+      }
+    ],
+    "no-inline-styles": "off"
   }
 }
