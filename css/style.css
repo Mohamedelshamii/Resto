@@ -431,8 +431,8 @@ main {
     }
 
     .offer-card {
-        margin: 0;
-        max-width: 250px;
+        margin: auto;
+        max-width: 300px;
     }
 
     .products {
